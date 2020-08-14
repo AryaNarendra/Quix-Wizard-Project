@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+ 	<link rel="stylesheet" href="./assets/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/stylesheets/style.css">
+<title>Wizard</title>
+</head>
+<body onload="load()">
+<div class="container" style="margin-top:10px">
+  <ul class="nav nav-pills nav-justified" style="border: 3px solid #007bff; padding: 2px; font-weight: 500">
+   <li class="nav-item"><a class="nav-link active" href="#" onclick="redirect(0)">Step 1: Personal Details</a></li>
+   <li class="nav-item"><a class="nav-link" href="#" onclick="redirect(1)">Step 2: Academic Qualifications</a></li>
+   <li class="nav-item"><a class="nav-link" href="#" onclick="redirect(2)">Step 3: Select Skills</a></li>
+   <li class="nav-item"><a class="nav-link" href="#" onclick="redirect(3)">Step 4: Review and Submit</a></li>
+ </ul>
+ 
+ <form id="regForm" action="congrats.html">
+
+  <div class="tab"><h1>Enter Name:</h1>
+    <p><input id="fname" placeholder="First name..." required="required" name="fname"></p>
+    <p><input id="mname" placeholder="Middle name..." required="required" name="mname"></p>
+    <p><input id="lname" placeholder="Last name..." required="required" name="lname"></p>
+  </div>
+  
+  <div class="tab"><h1>Please Enter your qualification briefly:</h1>
+    <p><input id="qual" placeholder="Course..." required="required" name="course"></p>
+  </div>
+  
+  <div class="tab"><h1>Select Your Skills that are applicable:</h1>
+    <table class="table">
+      <tr><td>Project Management</td><td><input id="checkbox1" type="checkbox"  name="skill[projectManagement]" onclick="chooseSkill(0)"></td></tr>
+      <tr><td>Technical Documentation</td><td><input id="checkbox2" type="checkbox"  name="skill[techDoc]" onclick="chooseSkill(1)"></td></tr>
+      <tr><td>Scrum</td><td><input id="checkbox3" type="checkbox"  name="skill[Scrum]" onclick="chooseSkill(2)"></td></tr>
+      <tr><td>HTML</td><td><input id="checkbox4" type="checkbox"  name="skill[HTML]" onclick="chooseSkill(3)"></td></tr>
+      <tr><td>CSS</td><td><input id="checkbox5" type="checkbox"  name="skill[CSS]" onclick="chooseSkill(4)"></td></tr>
+      <tr><td>JavaScript</td><td><input id="checkbox6" type="checkbox"  name="skill[JavaScript]" onclick="chooseSkill(5)"></td></tr>
+    </table>
+  </div>
+  
+  <div class="tab">
+  	<table class="table">
+  	<tr><td><strong>Final Review</strong></td></tr>
+  	<tr><td>Full Name</td><td id="f1"></td></tr>
+  	<tr><td>Qualifications</td><td id="f2"></td></tr><br>
+  	<tr><td><strong>Your chosen Skill Set</strong></td></tr>
+  	<tr><td>Project Management</td><td id="f3"></td></tr>
+  	<tr><td>Technical Documentation</td><td id="f4"></td></tr>
+  	<tr><td>Scrum</td><td id="f5"></td></tr>
+  	<tr><td>HTML</td><td id="f6"></td></tr>
+  	<tr><td>CSS</td><td id="f7"></td></tr>
+  	<tr><td>JavaScript</td><td id="f8"></td></tr>
+  	</table>
+  </div>
+  
+  <div style="overflow:auto;">
+    <div style="float:right;">
+      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+    </div>
+  </div>
+</form>
+	
+</div>
+<script src="./assets/js/script.js"></script>
+</body>
+</html>
